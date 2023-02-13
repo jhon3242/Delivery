@@ -1,0 +1,14 @@
+{
+  "name": "delivery",
+  "version": "1.0.0",
+  "description": "* 사용자가 어플에 로그인한다. * 사용자가 주문을 하면 가게에서 확인한다. * 주문이 확인되면 요리를 한다. * 요리가 완료되면 배달 기사에게 전달한다. * 배달 기사는 전달 받은 요리를 사용자에게 전달한다.",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
