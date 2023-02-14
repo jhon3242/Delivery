@@ -1,19 +1,20 @@
 const { Order } = require("../domain/Order");
 
 class OrderRepository {
-	static #instance;
-	#repository = [] 
+	// static #instance;
+	#repository = []
+	#store;
 	
-	
-	constructor(){
-		if (!OrderRepository.#instance) {
-			OrderRepository.#instance = this;
-		}
-		return OrderRepository.#instance;
+	constructor(store){
+		this.#store = store;
+		// if (!OrderRepository.#instance) {
+		// 	OrderRepository.#instance = this;
+		// }
+		// return OrderRepository.#instance;
 	}
 
-	addOrder(store, menu){
-		let order = new Order(store, menu);
+	addOrder(user, menu){
+		let order = new Order(this.#store, user, menu);
 
 		this.#repository.push(order.promisify());
 	}

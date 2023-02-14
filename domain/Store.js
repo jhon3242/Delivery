@@ -1,13 +1,17 @@
+
+
 class Store {
 	static #idCounter = 0;
 	#id;
-	#storeName;
 	#chefCount = 1;
-	#menus = new Map();
+	#storeName;
+	#orderRepository;
+	
 
 	constructor(name){
 		this.#id = ++this.#idCounter;
 		this.#storeName = name;
+		this.#orderRepository = new OrderRepository(this);
 	}
 
 	/**
@@ -15,6 +19,10 @@ class Store {
 	 */
 	addMenu(name, info) {
 		this.#menus.set(name, info)
+	}
+
+	addOrder(order){
+		this.#orderRepository.addOrder(order);
 	}
 
 	cook(menuId){
@@ -30,3 +38,5 @@ class Store {
 		return this.#chefCount
 	}
 }
+
+exports.Store = Store;

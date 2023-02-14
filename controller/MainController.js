@@ -3,14 +3,14 @@ const {OrderController} = require("./OrderController.js");
 
 class MainController {
 	#userController = new UserController();
-	#orderController;
+	#orderController = new OrderController();
 
 	constructor(){}
 
 	start() {
 		let user = this.#userController.login();
-		this.#orderController = new OrderController(user); // TODO 추후 분리
-		this.#orderController.process()
+		this.#orderController.process(user);
+
 	}
 }
 

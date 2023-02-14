@@ -2,25 +2,29 @@ class Order {
 	static #idCounter = 0;
 	#id;
 	#store;
+	#user;
 	#menus = [];
 
-	constructor(name){
+	constructor(store, user){
 		this.#id = ++this.#idCounter;
-		this.#storeName = name;
+		this.#store = name;
+		this.#user = user;
 	}
 
 	/**
 	 * @param {*} info  = {name : "chicken", cost : 20000, time : 60}
 	 */
-	addMenu(name, info) {
-		this.#menus.set(name, info)
+	addMenu(menu, count) {
+		while (count--) this.#menus.push([...menu]);
 	}
 
 	cook(){
-		
+
 	}
 
 	get id(){
 		return this.#id;
 	}
 }
+
+exports.Order = Order;
