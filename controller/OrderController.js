@@ -11,7 +11,23 @@ class OrderController {
 	}
 
 	order(){
+		this.#pickStore();
+		this.#pickMenu();
 		InputView.read(Question.ORDER_STORE);
 		InputView.read(Question.ORDER_MENU);
+	}
+
+	/**
+	 * 가게 선택
+	 */
+	#pickStore(){
+
+	}
+
+	/**
+	 * 메뉴 선택
+	 */
+	 #pickMenu(){
+
 	}
 }
