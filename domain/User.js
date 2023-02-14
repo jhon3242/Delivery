@@ -1,10 +1,11 @@
 class User {
+	static #idCounter = 0;
 	#id;
 	#name;
 	#password;
 
-	constructor(id, name, password) {
-		this.#id = id;
+	constructor(name, password) {
+		this.#id = ++this.#idCounter;
 		this.#name = name;
 		this.#password = password;
 	}
@@ -15,6 +16,10 @@ class User {
 		// console.log(this.#name == name);
 		// console.log(this.#password == password);
 		return this.#name == name && this.#password == password;
+	}
+
+	get id(){
+		return this.#id;
 	}
 }
 

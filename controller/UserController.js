@@ -1,20 +1,17 @@
 const { User } = require("../domain/User.js");
 const { InputView } = require("../view/InputView");
 const { OutputView } = require("../view/OutputView.js");
-
+const { UseReposiotry } = require("../repository/UseReposiotry.js");
 
 
 
 class UserController {
-	#id = 1;
-	#repository = new Map();
+	#repository =new UseReposiotry ();
 
-	constructor() {this.init()};
+	constructor() {
+		this.#repository.addUser(new User())
+	};
 
-	init(){
-		this.#repository.set(this.#id, new User(this.#id, "choi", 123));
-		this.#id++;
-	}
 
 	login() {
 		try {

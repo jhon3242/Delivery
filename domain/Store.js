@@ -1,8 +1,11 @@
 class Store {
+	static #idCounter = 0;
+	#id;
 	#storeName;
 	#menus = new Map();
 
 	constructor(name){
+		this.#id = ++this.#idCounter;
 		this.#storeName = name;
 	}
 
@@ -11,5 +14,9 @@ class Store {
 	 */
 	addMenu(name, info) {
 		this.#menus.set(name, info)
+	}
+
+	get id(){
+		return this.#id;
 	}
 }
