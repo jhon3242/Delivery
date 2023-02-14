@@ -16,4 +16,10 @@ class UserRepository {
 		let user = new User(name);
 		this.#repository.set(user.id, user);
 	}
+
+	findByName(name){
+		
+	}
 }
+
+exports.UserRepository = UserRepository;

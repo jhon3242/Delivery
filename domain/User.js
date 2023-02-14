@@ -5,7 +5,7 @@ class User {
 	#password;
 
 	constructor(name, password) {
-		this.#id = ++this.#idCounter;
+		this.#id = ++User.#idCounter;
 		this.#name = name;
 		this.#password = password;
 	}

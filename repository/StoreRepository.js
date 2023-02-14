@@ -11,8 +11,13 @@ class StoreRepository {
 		return StoreRepository.#instnace;
 	}
 
-	addStore(name){
-		let store = new Store(name);
+	addStore(store){
 		this.#repository.set(store.id, store);
 	}
+
+	findById(id) {
+		return this.#repository.get(id);
+	}
 }
+
+exports.StoreRepository = StoreRepository;

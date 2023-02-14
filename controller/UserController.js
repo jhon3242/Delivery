@@ -1,15 +1,15 @@
 const { User } = require("../domain/User.js");
 const { InputView } = require("../view/InputView");
 const { OutputView } = require("../view/OutputView.js");
-const { UseReposiotry } = require("../repository/UseReposiotry.js");
+const { UserRepository } = require("../repository/UserRepository.js");
 
 
 
 class UserController {
-	#repository =new UseReposiotry ();
+	#repository = new UserRepository();
 
 	constructor() {
-		this.#repository.addUser(new User())
+		this.#repository.addUser(new User("choi", 123))
 	};
 
 

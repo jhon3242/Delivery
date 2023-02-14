@@ -1,24 +1,26 @@
-
+const { Food } = require("./Food");
+const { OrderRepository } = require("../repository/OrderRepository.js");
 
 class Store {
 	static #idCounter = 0;
 	#id;
 	#chefCount = 1;
 	#storeName;
+	#menus;
 	#orderRepository;
 	
 
 	constructor(name){
-		this.#id = ++this.#idCounter;
+		this.#id = ++Store.#idCounter;
 		this.#storeName = name;
 		this.#orderRepository = new OrderRepository(this);
+		this.#menus = new Map();
+		this.addMenu(new Food("chicken", 40));
 	}
 
-	/**
-	 * @param {*} info  = {name : "chicken", cost : 20000, time : 60}
-	 */
-	addMenu(name, info) {
-		this.#menus.set(name, info)
+	
+	addMenu(food) {
+		this.#menus.set(food.id, food)
 	}
 
 	addOrder(order){
@@ -30,12 +32,20 @@ class Store {
 		setTimeout(() => menu, menu.time);
 	}
 
+	getFoodById(foodId){
+		return this.#menus.findById(foodId);
+	}
+
 	get id(){
 		return this.#id;
 	}
 
 	get chefCount(){
 		return this.#chefCount
+	}
+
+	get menus(){
+		return this.#menus
 	}
 }
 

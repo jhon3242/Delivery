@@ -6,16 +6,17 @@ class Order {
 	#menus = [];
 
 	constructor(store, user){
-		this.#id = ++this.#idCounter;
-		this.#store = name;
+		this.#id = ++Order.#idCounter;
+		this.#store = store;
 		this.#user = user;
 	}
 
 	/**
 	 * @param {*} info  = {name : "chicken", cost : 20000, time : 60}
 	 */
-	addMenu(menu, count) {
-		while (count--) this.#menus.push([...menu]);
+	addMenu(foodId, count) {
+		let food = this.#store.getFoodById(foodId);
+		while (count--) this.#menus.push(menu);
 	}
 
 	cook(){

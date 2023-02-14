@@ -19,3 +19,5 @@ class OrderRepository {
 		this.#repository.push(order.promisify());
 	}
 }
+
+exports.OrderRepository = OrderRepository;
