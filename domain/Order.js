@@ -1,9 +1,8 @@
-class Store {
+class Order {
 	static #idCounter = 0;
 	#id;
-	#storeName;
-	#chefCount = 1;
-	#menus = new Map();
+	#store;
+	#menus = [];
 
 	constructor(name){
 		this.#id = ++this.#idCounter;
@@ -17,16 +16,11 @@ class Store {
 		this.#menus.set(name, info)
 	}
 
-	cook(menuId){
-		let menu = menus.findById(menuId);
-		setTimeout(() => menu, menu.time);
+	cook(){
+		
 	}
 
 	get id(){
 		return this.#id;
-	}
-
-	get chefCount(){
-		return this.#chefCount
 	}
 }

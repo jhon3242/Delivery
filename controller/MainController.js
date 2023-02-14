@@ -9,8 +9,8 @@ class MainController {
 
 	start() {
 		let user = this.#userController.login();
-		this.#orderController = new OrderController(user);
-		
+		this.#orderController = new OrderController(user); // TODO 추후 분리
+		this.#orderController.process()
 	}
 }
 
