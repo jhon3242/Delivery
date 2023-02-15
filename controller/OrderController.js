@@ -16,13 +16,19 @@ class OrderController {
 
 	process(user){
 		this.#initStore();
-		return this.#order(user, this.#pickStore());
+		// return this.#order(user, this.#pickStore());
+
+		// TODO 추후 삭제
+		let order = new Order(user, this.#pickStore());
+		order.addFood(1, 2);
+		order.addFood(2, 1);
+		return order;
 	}
 
-	#initStore(){ // TODO 수정 필요
+	#initStore(){ // TODO 추후 삭제
 		let store = new Store("김밥나라");
-		store.addFoodToMenu(new Food("김밥", 5, 2000));
-		store.addFoodToMenu(new Food("치즈김밥", 7, 3000));
+		store.addFoodToMenu(new Food("김밥", 1000, 2000));
+		store.addFoodToMenu(new Food("치즈김밥", 2000, 3000));
 		this.#storeRepository.addStore(store);
 	}
 

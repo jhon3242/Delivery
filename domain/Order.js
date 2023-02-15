@@ -26,6 +26,10 @@ class Order {
 		return this.#menu;
 	}
 
+	get store(){
+		return this.#store;
+	}
+
 	get totalCost(){
 		let total = 0;
 		this.menu.forEach(obj => {

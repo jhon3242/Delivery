@@ -18,7 +18,6 @@ class Store {
 		
 	}
 
-	
 	addFoodToMenu(food) {
 		this.#menu.set(food.id, food)
 	}
@@ -27,9 +26,14 @@ class Store {
 		this.#orderRepository.addOrder(order);
 	}
 
-	cook(menuId){
-		let menu = menu.findById(menuId);
-		setTimeout(() => menu, menu.time);
+	async cook(foodId){
+		let food = this.menu.get(foodId);
+		await new Promise((resolve) => {
+			setTimeout(() => {
+				resolve(food);
+			}, +food.time);
+		})
+		return food;
 	}
 
 	getFoodById(foodId){
@@ -51,6 +55,8 @@ class Store {
 	get name(){
 		return this.#name;
 	}
+
+
 }
 
 exports.Store = Store;

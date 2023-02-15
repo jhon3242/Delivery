@@ -25,6 +25,14 @@ const OutputView = {
 		})
 		console.log(Div);
 		console.log(`총 금액 : ${order.totalCost}`);
+	},
+
+	printCook(foodName) {
+		console.log(`${foodName}이/가 조리가 완료되었습니다.`);
+	},
+
+	print(msg) {
+		console.log(msg);
 	}
 }
 
