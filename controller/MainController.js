@@ -12,8 +12,6 @@ class MainController {
 
 	async start() {
 		// let user = this.#userController.login();
-		
-
 		let order = this.#orderController.process(new User("choi", 123)); // TODO 수정필요
 		let envelop = await this.#storeController.sendOrderToStore(order);
 	}

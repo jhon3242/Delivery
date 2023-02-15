@@ -21,6 +21,9 @@ class Food {
 		return this.#name;
 	}
 
+	get cost(){
+		return this.#cost;
+	}
 
 	get time(){
 		return this.#time;
