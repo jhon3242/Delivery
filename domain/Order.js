@@ -3,9 +3,9 @@ class Order {
 	#id;
 	#store;
 	#user;
-	#menus = [];
+	#menu = [];
 
-	constructor(store, user){
+	constructor(user, store){
 		this.#id = ++Order.#idCounter;
 		this.#store = store;
 		this.#user = user;
@@ -14,14 +14,12 @@ class Order {
 	/**
 	 * @param {*} info  = {name : "chicken", cost : 20000, time : 60}
 	 */
-	addMenu(foodId, count) {
+	addFood(foodId, count) {
 		let food = this.#store.getFoodById(foodId);
-		while (count--) this.#menus.push(menu);
+		while (count--) this.#menu.push(food);
 	}
 
-	cook(){
-
-	}
+	
 
 	get id(){
 		return this.#id;

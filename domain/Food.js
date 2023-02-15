@@ -10,6 +10,14 @@ class Food {
 		this.#time = time;
 		this.#id = ++Food.#foodCounter;
 	}
+
+	get id(){
+		return this.#id;
+	}
+
+	get name(){
+		return this.#name;
+	}
 }
 
 exports.Food = Food;

@@ -22,7 +22,7 @@ class OrderController {
 
 	#initStore(){ // TODO 수정 필요
 		let store = new Store("김밥나라");
-		store.addMenu(new Food("김밥", 5));
+		store.addFoodToMenu(new Food("김밥", 5));
 		this.#storeRepository.addStore(store);
 	}
 
@@ -32,21 +32,18 @@ class OrderController {
 	 */
 	#order(user, store){
 		let order = new Order(user, store)
-		while (this.#continueOrder()){
-			OutputView.printMenu(store.menus)
+		OutputView.printStore(store);
+		OutputView.printMenu(store.menu)
+		while (true){
 			let foodId = InputView.read(Question.ORDER_FOOD)
+			if (foodId == Answer.NO) break;
 			let count = InputView.read(Question.COUNT);
-			order.addfood(foodId, count);
+			order.addFood(foodId, count);
 		}
-		store.addOrder(order);
+		// TODO
+		// store.addOrder(order);
 	}
 
-	#continueOrder(){
-		return true;
-		// let answer = InputView.read(Question.CONTINUE_ORDER);
-		// if (answer == Answer.YES) return true;
-		// return false;
-	}
 
 
 	#pickStore(){ // TODO 수정 필요

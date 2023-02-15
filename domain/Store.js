@@ -5,22 +5,22 @@ class Store {
 	static #idCounter = 0;
 	#id;
 	#chefCount = 1;
-	#storeName;
-	#menus;
+	#name;
+	#menu;
 	#orderRepository;
 	
 
 	constructor(name){
 		this.#id = ++Store.#idCounter;
-		this.#storeName = name;
+		this.#name = name;
 		this.#orderRepository = new OrderRepository(this);
-		this.#menus = new Map();
-		this.addMenu(new Food("chicken", 40));
+		this.#menu = new Map();
+		this.addFoodToMenu(new Food("chicken", 40));
 	}
 
 	
-	addMenu(food) {
-		this.#menus.set(food.id, food)
+	addFoodToMenu(food) {
+		this.#menu.set(food.id, food)
 	}
 
 	addOrder(order){
@@ -28,12 +28,12 @@ class Store {
 	}
 
 	cook(menuId){
-		let menu = menus.findById(menuId);
+		let menu = menu.findById(menuId);
 		setTimeout(() => menu, menu.time);
 	}
 
 	getFoodById(foodId){
-		return this.#menus.findById(foodId);
+		return this.#menu.get(foodId);
 	}
 
 	get id(){
@@ -41,11 +41,15 @@ class Store {
 	}
 
 	get chefCount(){
-		return this.#chefCount
+		return this.#chefCount;
 	}
 
-	get menus(){
-		return this.#menus
+	get menu(){
+		return this.#menu;
+	}
+
+	get name(){
+		return this.#name;
 	}
 }
 
