@@ -40,6 +40,7 @@ class OrderController {
 			let count = InputView.read(Question.COUNT);
 			order.addFood(foodId, count);
 		}
+		OutputView.printOrder(order);
 		// TODO
 		// store.addOrder(order);
 	}

@@ -15,6 +15,16 @@ const OutputView = {
 		}
 		console.log(Sign.ORDER_FINISH);
 		console.log(Div);
+	},
+
+	printOrder(order) {
+		console.log(Div);
+		console.log(Sign.RECEIPT);
+		let total = 0;
+		order.menu.forEach(obj => {
+			console.log(`음식 : ${obj.name} 	 개수 : ${obj.count}`);
+			total += obj.cost;
+		})
 	}
 }
 

@@ -33,7 +33,7 @@ class Store {
 	}
 
 	getFoodById(foodId){
-		return this.#menu.get(foodId);
+		return this.#menu.get(+foodId);
 	}
 
 	get id(){
