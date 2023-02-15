@@ -13,10 +13,9 @@ class Order {
 		this.#orderTime = new Date();
 	}
 
-
 	addFood(foodId, count) {
 		let food = this.#store.getFoodById(foodId);
-		this.#menu.push({name : food.name, "count" : count, "food" : food})
+		this.#menu.push({"food" : food, "count" : count, })
 	}
 
 	get id(){
@@ -25,6 +24,14 @@ class Order {
 
 	get menu(){
 		return this.#menu;
+	}
+
+	get totalCost(){
+		let total = 0;
+		this.menu.forEach(obj => {
+			total += obj.food.cost * obj.count;
+		})
+		return total
 	}
 }
 

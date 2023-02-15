@@ -15,7 +15,7 @@ class Store {
 		this.#name = name;
 		this.#orderRepository = new OrderRepository(this);
 		this.#menu = new Map();
-		this.addFoodToMenu(new Food("chicken", 40));
+		
 	}
 
 	

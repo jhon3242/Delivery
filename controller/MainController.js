@@ -10,8 +10,8 @@ class MainController {
 
 	start() {
 		// let user = this.#userController.login();
-		this.#orderController.process(new User("choi", 123)); // TODO 수정필요
-
+		let order = this.#orderController.process(new User("choi", 123)); // TODO 수정필요
+		
 	}
 }
 

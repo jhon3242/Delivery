@@ -11,7 +11,7 @@ const OutputView = {
 
 	printMenu(menu) {
 		for (let [id, food] of menu.entries()) {
-			console.log(`번호 : ${id}, 이름 : ${food.name}`);
+			console.log(`번호 : ${id}	이름 : ${food.name}		가격${food.cost}`);
 		}
 		console.log(Sign.ORDER_FINISH);
 		console.log(Div);
@@ -20,11 +20,11 @@ const OutputView = {
 	printOrder(order) {
 		console.log(Div);
 		console.log(Sign.RECEIPT);
-		let total = 0;
 		order.menu.forEach(obj => {
-			console.log(`음식 : ${obj.name} 	 개수 : ${obj.count}`);
-			total += obj.cost;
+			console.log(`음식 : ${obj.food.name}	개수 : ${obj.count}	가격 : ${obj.food.cost * obj.count}`);
 		})
+		console.log(Div);
+		console.log(`총 금액 : ${order.totalCost}`);
 	}
 }
 

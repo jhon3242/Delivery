@@ -16,16 +16,15 @@ class OrderController {
 
 	process(user){
 		this.#initStore();
-		let store = this.#pickStore();
-		this.#order(user, store);
+		return this.#order(user, this.#pickStore());
 	}
 
 	#initStore(){ // TODO 수정 필요
 		let store = new Store("김밥나라");
-		store.addFoodToMenu(new Food("김밥", 5));
+		store.addFoodToMenu(new Food("김밥", 5, 2000));
+		store.addFoodToMenu(new Food("치즈김밥", 7, 3000));
 		this.#storeRepository.addStore(store);
 	}
-
 
 	/**
 	 * 가게에 주문을 하는 함수
@@ -41,8 +40,7 @@ class OrderController {
 			order.addFood(foodId, count);
 		}
 		OutputView.printOrder(order);
-		// TODO
-		// store.addOrder(order);
+		return order;
 	}
 
 

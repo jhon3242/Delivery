@@ -7,7 +7,7 @@ const Question = {
 
 const Sign = {
 	ORDER_FINISH : "주문을 종료하고 싶으면 n 를 입력해주세요.",
-	RECEIPT : "		주문서		",
+	RECEIPT : "			주문서			",
 }
 
 const Answer = {
@@ -15,6 +15,6 @@ const Answer = {
 	NO : "n"
 }
 
-const Div = "-----------------------------------------\n\n"
+const Div = "-------------------------------------------------\n\n"
 
 module.exports = {Question, Answer, Sign, Div};
