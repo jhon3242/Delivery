@@ -9,6 +9,9 @@ const Sign = {
 	ORDER_FINISH : "주문을 종료하고 싶으면 n 를 입력해주세요.",
 	RECEIPT : "			주문서			",
 	COOKING : "			조리중...		",
+	PICKUP : "			픽업중...		",
+	DELIVER : "			배달중...		",
+	FINISH : "		배달이 완료되었습니다!		",
 }
 
 const Answer = {

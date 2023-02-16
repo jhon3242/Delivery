@@ -1,4 +1,4 @@
-const { Sign } = require("../domain/Const.js");
+const { Sign, Div} = require("../domain/Const.js");
 const { StoreRepository } = require("../repository/StoreRepository.js");
 const { OutputView } = require("../view/OutputView.js");
 
@@ -16,8 +16,7 @@ class StoreController {
 			let box = await this.#cook(order.store, foodOrd);
 			envelope.push(box);
 		}
-		// envelope.push(order);
-		// console.log(envelope);
+		OutputView.print(Div);
 		return envelope;
 	}
 
