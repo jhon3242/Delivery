@@ -7,7 +7,7 @@ class Driver {
 	constructor(name){
 		this.#name = name;
 		this.#working = false;
-		this.#speed = 1000;
+		this.#speed = 3000;
 	}
 
 	canDeliver(){

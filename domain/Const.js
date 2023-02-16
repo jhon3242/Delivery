@@ -19,6 +19,11 @@ const Answer = {
 	NO : "n"
 }
 
+const Validate = {
+	ORDER_NUM : "0123456789n",
+	NUM : "0123456789",
+};
+
 const Div = "-------------------------------------------------\n\n"
 
-module.exports = {Question, Answer, Sign, Div};
+module.exports = {Question, Answer, Sign, Validate, Div};

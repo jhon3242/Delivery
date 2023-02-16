@@ -14,7 +14,7 @@ class OrderController {
 
 	constructor() {}
 
-	process(user){
+	getOrder(user){
 		this.#initStore();
 		return this.#order(user, this.#pickStore());
 
@@ -36,9 +36,9 @@ class OrderController {
 		OutputView.printStore(store);
 		OutputView.printMenu(store.menu)
 		while (true){
-			let foodId = InputView.read(Question.ORDER_FOOD)
+			let foodId = InputView.readMenuNum()
 			if (foodId == Answer.NO) break;
-			let count = InputView.read(Question.COUNT);
+			let count = InputView.readNum();
 			order.addFood(foodId, count);
 		}
 		OutputView.printOrder(order);
