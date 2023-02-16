@@ -9,7 +9,7 @@ class StoreController {
 	
 	constructor(){}
 
-	async sendOrderToStore(order) {
+	async transmitOrder(order) {
 		let envelope = [];
 		OutputView.print(Sign.COOKING);
 		for (let foodOrd of order.menu){

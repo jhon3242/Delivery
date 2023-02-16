@@ -18,10 +18,6 @@ class OrderController {
 		this.#initStore();
 		return this.#order(user, this.#pickStore());
 
-		// TODO 추후 삭제
-		// let order = new Order(user, this.#pickStore());
-		// order.addFood(1, 2);
-		// order.addFood(2, 1);
 		return order;
 	}
 
