@@ -20,6 +20,10 @@ class UserRepository {
 	findByName(name){
 		
 	}
+
+	getSize(){
+		return this.#repository.size;
+	}
 }
 
 exports.UserRepository = UserRepository;

@@ -8,10 +8,10 @@ const { UserRepository } = require("../repository/UserRepository.js");
 class UserController {
 	#repository = new UserRepository();
 
-	constructor() {
-		this.#repository.addUser(new User("choi", 123))
-	};
-
+	constructor() {};
+	test(){
+		console.log(this.#repository.getSize());
+	}
 
 	login() {
 		try {

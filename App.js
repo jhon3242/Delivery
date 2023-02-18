@@ -1,12 +1,15 @@
 const { MainController } = require("./controller/MainController.js");
+const { initDB } = require("./init/Init.js");
+
 
 class App {
 	#mainController = new MainController();
 
 	constructor(){}
 
-	play(){
-		this.#mainController.start();
+	async play(){
+		await initDB();
+		await this.#mainController.start();
 	}
 }
 

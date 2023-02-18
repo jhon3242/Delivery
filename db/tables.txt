@@ -1,0 +1,27 @@
+create table Store (
+	id int AUTO_INCREMENT PRIMARY KEY,
+	name varchar(20) not null,
+	chefCount int
+)
+
+
+
+create table Food (
+	id int AUTO_INCREMENT,
+	name varchar(20) not null,
+	time int,
+	cost int,
+	PRIMARY KEY (id)
+)
+
+
+CREATE TABLE StoreFood (
+    storeId INT,
+    foodId INT,
+    PRIMARY KEY (storeId, foodId),
+    FOREIGN KEY (storeId) REFERENCES Store(id),
+    FOREIGN KEY (foodId) REFERENCES Food(id)
+);
+
+
+INSERT INTO Store (name, chefCount)values ('김밥나라',1)
